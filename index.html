@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Stock Dashboard</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      var socket = io();
+      socket.on('newprice', function(data) {
+        document.getElementById("price").innerHTML = data.symbol + ": " + data.price;
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Real-Time Stock Price</h1>
+    <div id="price"></div>
+  </body>
+</html>
